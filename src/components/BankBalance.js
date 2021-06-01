@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 const BankBalance = () => {
     const bankBalance = useSelector((state) => state.bankBalance);
-    return <div className="bank-balance text-center w-100">${bankBalance}</div>;
+    return <div className="bank-balance text-center w-100">${bankBalance || 0}</div>;
 };
 
 export default BankBalance;
