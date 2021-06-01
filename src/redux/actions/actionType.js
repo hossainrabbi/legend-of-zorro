@@ -1,2 +1,3 @@
 export const ADD_BALANCE = 'ADD_BALANCE';
 export const NEGATES_BALANCE = 'NEGATES_BALANCE';
+export const CASH_TO_CHARIT = 'CASH_TO_CHARIT';

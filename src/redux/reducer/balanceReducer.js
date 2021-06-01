@@ -1,4 +1,4 @@
-import { ADD_BALANCE, NEGATES_BALANCE } from '../actions/actionType';
+import { ADD_BALANCE, CASH_TO_CHARIT, NEGATES_BALANCE } from '../actions/actionType';
 
 const initializingState = {
     bankBalance: 100000,
@@ -17,6 +17,11 @@ const balanceReducer = (state = initializingState, action) => {
             return {
                 ...state,
                 bankBalance: state.bankBalance - 1000,
+            };
+        case CASH_TO_CHARIT:
+            return {
+                ...state,
+                bankBalance: 0,
             };
         default:
             return state;
