@@ -6,17 +6,29 @@ import { addBalance, cashToCharity, negatesBalance } from '../redux/actions/bala
 const BankButtons = (props) => (
     <Row className="mt-4">
         <Col md={4}>
-            <Button className="custom-btn w-100 py-3" onClick={() => props.addBalance()}>
+            <Button
+                className="custom-btn w-100 py-3"
+                style={{ backgroundColor: '#0392f7' }}
+                onClick={() => props.addBalance()}
+            >
                 +1000
             </Button>
         </Col>
         <Col md={4}>
-            <Button className="custom-btn w-100 py-3" onClick={() => props.negatesBalance()}>
+            <Button
+                className="custom-btn w-100 py-3"
+                style={{ backgroundColor: '#d66300' }}
+                onClick={() => props.negatesBalance()}
+            >
                 -1000
             </Button>
         </Col>
         <Col md={4}>
-            <Button className="custom-btn w-100 py-3" onClick={() => props.cashToCharity()}>
+            <Button
+                className="custom-btn w-100 py-3"
+                style={{ backgroundColor: '#dc3545' }}
+                onClick={() => props.cashToCharity()}
+            >
                 cash to charity
             </Button>
         </Col>
