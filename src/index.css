@@ -3,6 +3,8 @@
 
 :root {
     --balance-color: #dddddd;
+    --btn-color: #ffffff;
+    --radius: 5px;
 }
 
 * {
@@ -14,6 +16,21 @@
 body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+}
+
+.custom-btn {
+    color: var(--btn-color);
+    font-weight: 600;
+    border: none;
+    font-size: 20px;
+    border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+}
+.custom-btn:focus {
+    box-shadow: none;
 }
 
 /* App Components */
@@ -28,4 +45,9 @@ body {
     padding: 20px;
     font-size: 25px;
     font-weight: 500;
+    border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
 }
