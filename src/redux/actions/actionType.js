@@ -1,0 +1,2 @@
+export const ADD_BALANCE = 'ADD_BALANCE';
+export const NEGATES_BALANCE = 'NEGATES_BALANCE';

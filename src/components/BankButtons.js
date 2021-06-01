@@ -1,20 +1,24 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
-import btnItem from './button.data';
+import { connect } from 'react-redux';
+import { addBalance } from '../redux/actions/balanceAction';
 
-const BankButtons = () => (
+const BankButtons = ({ addedBalance }) => (
     <Row className="mt-4">
-        {btnItem.map((item) => (
-            <Col md={4} key={item.id}>
-                <Button
-                    className="custom-btn w-100 py-3"
-                    style={{ backgroundColor: `${item.bgColor}` }}
-                >
-                    {item.name}
-                </Button>
-            </Col>
-        ))}
+        <Col md={4}>
+            <Button className="custom-btn w-100 py-3" onClick={() => addedBalance()}>
+                +1000
+            </Button>
+        </Col>
     </Row>
 );
 
-export default BankButtons;
+const mapStateToProps = (state) => ({
+    numOfCake: state.numOfCake,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    addedBalance: () => dispatch(addBalance()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BankButtons);

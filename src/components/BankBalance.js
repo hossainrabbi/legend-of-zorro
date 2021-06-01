@@ -1,5 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const BankBalance = () => <div className="bank-balance text-center w-100">$123459</div>;
+const BankBalance = () => {
+    const bankBalance = useSelector((state) => state.bankBalance);
+    return <div className="bank-balance text-center w-100">${bankBalance}</div>;
+};
 
 export default BankBalance;
