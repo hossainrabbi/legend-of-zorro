@@ -5,6 +5,9 @@
     --balance-color: #dddddd;
     --btn-color: #ffffff;
     --radius: 5px;
+    --transition: 0.3s;
+    --shadow: 0 0 10px #0000003d;
+    --btn-shadow: 3px 3px 10px #000000;
 }
 
 * {
@@ -18,21 +21,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.custom-btn {
-    color: var(--btn-color);
-    font-weight: 600;
-    border: none;
-    font-size: 20px;
-    border-radius: var(--radius);
-    -webkit-border-radius: var(--radius);
-    -moz-border-radius: var(--radius);
-    -ms-border-radius: var(--radius);
-    -o-border-radius: var(--radius);
-}
-.custom-btn:focus {
-    box-shadow: none;
-}
-
 /* App Components */
 .App {
     width: 100vw;
@@ -41,13 +29,35 @@ body {
 
 /* Bank Balance Components */
 .bank-balance {
-    background-color: var(--balance-color);
     padding: 20px;
     font-size: 25px;
     font-weight: 500;
+    box-shadow: var(--shadow);
     border-radius: var(--radius);
     -webkit-border-radius: var(--radius);
     -moz-border-radius: var(--radius);
     -ms-border-radius: var(--radius);
     -o-border-radius: var(--radius);
+}
+
+/* Custom Button Components */
+.custom-btn {
+    color: var(--btn-color);
+    font-weight: 600;
+    border: none;
+    font-size: 20px;
+    box-shadow: var(--btn-shadow);
+    border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+    transition: all var(--transition);
+    -webkit-transition: all var(--transition);
+    -moz-transition: all var(--transition);
+    -ms-transition: all var(--transition);
+    -o-transition: all var(--transition);
+}
+.custom-btn:focus {
+    box-shadow: none;
 }

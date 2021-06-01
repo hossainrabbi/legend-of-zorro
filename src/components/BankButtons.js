@@ -1,37 +1,14 @@
 import React from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { addBalance, cashToCharity, negatesBalance } from '../redux/actions/balanceAction';
+import CustomBtn from './CustomBtn';
 
-const BankButtons = (props) => (
-    <Row className="mt-4">
-        <Col md={4}>
-            <Button
-                className="custom-btn w-100 py-3"
-                style={{ backgroundColor: '#0392f7' }}
-                onClick={() => props.addBalance()}
-            >
-                +1000
-            </Button>
-        </Col>
-        <Col md={4}>
-            <Button
-                className="custom-btn w-100 py-3"
-                style={{ backgroundColor: '#d66300' }}
-                onClick={() => props.negatesBalance()}
-            >
-                -1000
-            </Button>
-        </Col>
-        <Col md={4}>
-            <Button
-                className="custom-btn w-100 py-3"
-                style={{ backgroundColor: '#dc3545' }}
-                onClick={() => props.cashToCharity()}
-            >
-                cash to charity
-            </Button>
-        </Col>
+const BankButtons = ({ added, negates, charity }) => (
+    <Row className="mt-5">
+        <CustomBtn name="+1000" bgColor="#0392f7" dispatch={added} />
+        <CustomBtn name="-1000" bgColor="#d66300" dispatch={negates} />
+        <CustomBtn name="Charity" bgColor="#dc3545" dispatch={charity} />
     </Row>
 );
 
@@ -40,9 +17,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    addBalance: () => dispatch(addBalance()),
-    negatesBalance: () => dispatch(negatesBalance()),
-    cashToCharity: () => dispatch(cashToCharity()),
+    added: () => dispatch(addBalance()),
+    negates: () => dispatch(negatesBalance()),
+    charity: () => dispatch(cashToCharity()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BankButtons);

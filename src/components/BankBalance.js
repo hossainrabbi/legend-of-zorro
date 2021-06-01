@@ -1,9 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
-const BankBalance = () => {
-    const bankBalance = useSelector((state) => state.bankBalance);
-    return <div className="bank-balance text-center w-100">${bankBalance || 0}</div>;
-};
+const BankBalance = ({ bankBalance }) => (
+    <div className="bank-balance text-center w-100">${bankBalance || 0}</div>
+);
+const mapStateToProps = (state) => ({
+    bankBalance: state.bankBalance,
+});
 
-export default BankBalance;
+export default connect(mapStateToProps)(BankBalance);
