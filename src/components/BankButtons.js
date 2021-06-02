@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { addBalance, cashToCharity, negatesBalance } from '../redux/actions/balanceAction';
+import { addBalance, cashToCharity, negatesBalance } from '../redux/slices/balanceSlices';
 import CustomBtn from './CustomBtn';
 
 const BankButtons = ({ added, negates, charity }) => (
@@ -13,7 +13,7 @@ const BankButtons = ({ added, negates, charity }) => (
 );
 
 const mapStateToProps = (state) => ({
-    bankBalance: state.bankBalance,
+    bankBalance: state.balance.bankBalance,
 });
 
 const mapDispatchToProps = (dispatch) => ({

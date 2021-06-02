@@ -1,7 +1,6 @@
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import balanceReducer from './reducer/balanceReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import balanceReducer from './slices/balanceSlices';
 
-const store = createStore(balanceReducer, applyMiddleware(thunk));
-
-export default store;
+export default configureStore({
+    reducer: { balance: balanceReducer },
+});
