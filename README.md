@@ -26,5 +26,5 @@ Please follow the below instructions to run this project in your machine:
 -   react
 -   @reduxjs/toolkit
 -   react-redux
--   react-bootstrap
 -   bootstrap
+-   react-bootstrap
