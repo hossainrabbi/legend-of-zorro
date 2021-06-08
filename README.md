@@ -24,7 +24,7 @@ Please follow the below instructions to run this project in your machine:
 ### Technology Used:
 
 -   react
--   react-redux
 -   @reduxjs/toolkit
+-   react-redux
 -   bootstrap
 -   react-bootstrap
